@@ -77,7 +77,7 @@ type FormContentProps {
   loginForm: FormStore<LoginForm>;
 }
 
-const FormContent = component$(({ loginForm }) => (
+const FormContent = component$(({ loginForm }: FormContentProps) => (
   <Form of={loginForm}>
     <Field of={loginForm} name="email">
       {(field, props) => <input {...props} type="email" />}
@@ -107,7 +107,7 @@ export function LoginPage() {
   return <FormContent loginForm={loginForm} />
 }
 
-type FormContentProps {
+type FormContentProps = {
   loginForm: FormStore<LoginForm>;
 }
 
